@@ -20,5 +20,7 @@ Similar to training data described above.
 The model was evaluated using precision, recall and fbeta. The value is 0.0644, 1.0, and 0.1210.
 
 ## Ethical Considerations
+All predictions are based entirely on data, please do not involve any personal judgement based on ethnicity, race, sex, etc.
 
 ## Caveats and Recommendations
+Given sex classes are binary (Male/Female). Further work needed to evaluate across a spectrum of genders.

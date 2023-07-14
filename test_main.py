@@ -35,11 +35,11 @@ def test_api_post_prediction1():
 
 def test_api_post_prediction2():
     input_data = json.dumps({
-                    "age": 50, 
+                    "age": 52, 
                     "workclass": "Self-emp-not-inc",
-                    "fnlgt": 83311,
-                    "education": "Bachelors",
-                    "education-num": 13,
+                    "fnlgt": 209642,
+                    "education": "HS-grad",
+                    "education-num": 9,
                     "marital-status": "Married-civ-spouse",
                     "occupation": "Exec-managerial",
                     "relationship": "Husband",
@@ -47,9 +47,9 @@ def test_api_post_prediction2():
                     "sex": "Male",
                     "capital-gain": 0,
                     "capital-loss": 0,
-                    "hours-per-week": 13,
+                    "hours-per-week": 45,
                     "native-country": "United-States"
                 })
     r = client.post("/inference/", data = input_data)
     assert r.status_code == 200
-    assert r.json() == {"preds": "0"}
+    assert r.json() == {"preds": "1"}

@@ -30,7 +30,7 @@ def test_compute_model_metrics():
 
 
 def test_inference():
-    with open('./data/X_test_sample.pkl', 'rb') as f:
+    with open('./data/X_test.pkl', 'rb') as f:
         X_test_sample = pickle.load(f)
     with open('./model/model.pkl', 'rb') as f:
         model = pickle.load(f)
