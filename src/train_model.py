@@ -1,8 +1,6 @@
 # Script to train machine learning model.
-
-from sklearn.model_selection import train_test_split
-
 # Add the necessary imports for the starter code.
+from sklearn.model_selection import train_test_split
 import pandas as pd
 import numpy as np
 import pickle
@@ -78,12 +76,18 @@ X_train, y_train, encoder, lb = process_data(
 X_test, y_test, encoder, lb = process_data(
     test, categorical_features=cat_features, label=label, training=False, encoder=encoder, lb=lb
 )
+
 # Train and save a model.
 model = train_model(X_train, y_train)
 with open('./model/model.pkl','wb') as f:
     pickle.dump(model,f)
 with open('./model/encoder.pkl','wb') as f:
     pickle.dump(encoder,f)
+
+# Evaluation on test set
+pred = inference(model, X_test)
+precision, recall, fbeta = compute_model_metrics(y_test, pred)
+print(f"precision = {precision}, recall = {recall}, fbeta = {fbeta}")
 
 # Evaluation on data slices
 metrics_slice_df = evaluate_performance_on_data_slice(model, test, cat_features, encoder, lb)

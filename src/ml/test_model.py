@@ -30,10 +30,10 @@ def test_compute_model_metrics():
 
 
 def test_inference():
-    with open('./data/X_test.pkl', 'rb') as f:
-        X_test_sample = pickle.load(f)
+    with open('./data/X_test_all.pkl', 'rb') as f:
+        X_test = pickle.load(f)
     with open('./model/model.pkl', 'rb') as f:
         model = pickle.load(f)
-    preds = inference(model, X_test_sample)
+    preds = inference(model, X_test)
     assert isinstance(preds, numpy.ndarray)
     assert set(preds) == {0,1}

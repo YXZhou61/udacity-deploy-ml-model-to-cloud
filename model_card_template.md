@@ -17,7 +17,8 @@ The cleaned data set has 30163 rows, and a 80-20 split was used to break this in
 Similar to training data described above.
 
 ## Metrics
-The model was evaluated using precision, recall and fbeta. The value is 0.0644, 1.0, and 0.1210.
+The model was evaluated using precision, recall and fbeta. 
+The evaluaton resuil on test set: precision = 1.0, recall = 0.057530704589528116, fbeta = 0.10880195599022004.
 
 ## Ethical Considerations
 All predictions are based entirely on data, please do not involve any personal judgement based on ethnicity, race, sex, etc.
